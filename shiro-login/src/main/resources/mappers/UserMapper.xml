@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.edu.zut.mapper.UserMapper">
+    <resultMap id="User" type="cn.edu.zut.pojo.User">
+        <id column="id" property="id"></id>
+        <result column="username" property="username"></result>
+        <result column="password" property="password"></result>
+        <result column="create_time" property="create_time"></result>
+        <result column="status" property="status"></result>
+
+
+    </resultMap>
+
+    <select id="findByUserName" resultMap="User">
+        select * from s_user where username=#{userName}
+
+    </select>
+</mapper>
